@@ -5,7 +5,7 @@ import { Pipe, PipeTransform } from '@angular/core';
 })
 export class FormatDatePipe implements PipeTransform {
 
-  transform(value: any, args?: any): any {
+  transform(value: any, locale = 'Pt-Br'): any {
     if(value.length<10){
       return value;
     }
@@ -16,7 +16,7 @@ export class FormatDatePipe implements PipeTransform {
     }
 
     let date = new Date(dateArray[0], dateArray[1]-1, dateArray[2]);
-    return Intl.DateTimeFormat('Pt-Br').format(date);
+    return Intl.DateTimeFormat(locale).format(date);
   }
 
 }

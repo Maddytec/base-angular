@@ -7,6 +7,7 @@ import { ContactFormComponent } from './contact-form/contact-form.component';
 import { TaskListComponent } from './task-list/task-list.component';
 import { FormatCurrencyPipe } from './format-currency.pipe';
 import { FormatDatePipe } from './format-date.pipe';
+import { MyTaskDirective } from './my-task.directive';
 
 @NgModule({
   declarations: [
@@ -14,7 +15,8 @@ import { FormatDatePipe } from './format-date.pipe';
     ContactFormComponent,
     TaskListComponent,
     FormatCurrencyPipe,
-    FormatDatePipe
+    FormatDatePipe,
+    MyTaskDirective
   ],
   imports: [
     BrowserModule,

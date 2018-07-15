@@ -9,10 +9,10 @@
 <br/>
 <button type="button" (click)='add()' >Add list</button>
 <ul>
-    <li *ngFor="let item of tasks">
+    <li *ngFor="let item of tasks" [myTask]="item">
         {{item.name | lowercase}} - {{item.value | formatCurrency}} - {{item.dateAdd | formatDate}} 
       </li>
-    
+  <p myTask></p>
 
 
   <!--    
