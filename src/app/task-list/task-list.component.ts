@@ -1,5 +1,6 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 import { Task } from '../task';
+import { TaskService } from '../task.service';
 
 @Component({
   selector: 'task-list',
@@ -7,15 +8,13 @@ import { Task } from '../task';
   styleUrls: ['./task-list.component.css']
 })
 export class TaskListComponent {
-  tasks = [];
-  task:Task = {
-    name: "",
-    value: 0,
-    dateAdd: ""
-  };
-  add() {
-    let task = Object.assign({},this.task)
-    this.tasks.push(task);
+  tasks:Array<Task>;
+
+  constructor(private taskService:TaskService){
+    this.taskService.tasks.push({
+      name: '', value: 0, dateAdd: ''
+    });
+    this.tasks = this.taskService.tasks;
   }
 }
 

@@ -1,19 +1,8 @@
-<label for="name">Name:</label>
-<input id="name" type="text" [(ngModel)]="task.name">
-<br/>
-<label for="value">Value:</label>
-<input id="value" type="text" [(ngModel)]="task.value">
-<br/>
-<label for="value">Date:</label>
-<input id="value" type="text" [(ngModel)]="task.dateAdd">
-<br/>
-<button type="button" (click)='add()' >Add list</button>
 <ul>
     <li *ngFor="let item of tasks" [myTask]="item">
         {{item.name | lowercase}} - {{item.value | formatCurrency}} - {{item.dateAdd | formatDate}} 
-      </li>
-  <p myTask></p>
-
+    </li>
+</ul>
 
   <!--    
   <li *ngFor="let item of tasks">
@@ -30,5 +19,4 @@
       *ngFor="let item of tasks" [innerHtml]="item.name + ' - ' + item.value">
     </li>
   -->
-</ul>
 
